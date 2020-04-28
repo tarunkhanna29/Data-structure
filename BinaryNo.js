@@ -35,7 +35,7 @@ var compliment = function (x) {
 }
 
 var TwoCompliment = function (x) {
-	return (~x >>> 0) + 1;
+	return ~x + 1;
 }
 
 var maskOddBits = function (x) {
