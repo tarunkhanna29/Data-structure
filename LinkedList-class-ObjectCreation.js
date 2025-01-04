@@ -47,12 +47,27 @@ linkedList2.print();
 const newHead = sortLinkedLists(linkedList1.getHeadNode(), linkedList2.head);
 printAnyLinkedList(newHead);
 
+swapBlocksInLinkedList(newHead);
+printAnyLinkedList(newHead);
+
+const linkedList3 = new LinkedListClass.LinkedList();
+linkedList3.addNewNodeAtEnd(1);
+linkedList3.addNewNodeAtEnd(2);
+linkedList3.addNewNodeAtEnd(3);
+linkedList3.addNewNodeAtEnd(4);
+linkedList3.addNewNodeAtEnd(5);
+linkedList3.addNewNodeAtEnd(6);
+swapBlocksInLinkedList(linkedList3.head);
+printAnyLinkedList(linkedList3.head);
+
 function printAnyLinkedList(head) {
+  console.log("\n******");
   let tmp = head;
   while (tmp != null) {
     console.log(tmp.data);
     tmp = tmp.next;
   }
+  console.log("******\n");
 }
 
 function sortLinkedLists(h1, h2) {
@@ -68,4 +83,29 @@ function sortLinkedLists(h1, h2) {
   }
   h2.next = sortLinkedLists(h1, h2.next);
   return h2;
+}
+
+// 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7
+// 1 -> 7 -> 2 -> 6 -> 3 -> 5 -> 4
+function swapBlocksInLinkedList(head) {
+  if (head == null || head.next == null) {
+    return head;
+  }
+  const map = new Map();
+  map["head"] = head;
+  swapBlocksInLinkedListUtil(map, head);
+}
+
+function swapBlocksInLinkedListUtil(map, ptr) {
+  if (!map["head"] || !ptr || !ptr.next) {
+    return;
+  }
+  swapBlocksInLinkedListUtil(map, ptr.next);
+  if (!map["head"] || !map["head"].next || !map["head"].next.next) {
+    return;
+  }
+  ptr.next.next = map["head"].next;
+  map["head"].next = ptr.next;
+  ptr.next = null;
+  map["head"] = map["head"]?.next?.next;
 }
