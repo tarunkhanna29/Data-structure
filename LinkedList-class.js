@@ -65,6 +65,10 @@ export class LinkedList {
     }
     return map;
   }
+
+  getHeadNode() {
+    return this.head;
+  }
 }
 
 class Node {
