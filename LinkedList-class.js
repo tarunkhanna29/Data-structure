@@ -55,6 +55,16 @@ export class LinkedList {
     }
     tmp.next = null;
   }
+
+  convertToMap() {
+    const map = new Map();
+    let tmp = this.head;
+    while (tmp != null) {
+      map.set(tmp.data, tmp);
+      tmp = tmp.next;
+    }
+    return map;
+  }
 }
 
 class Node {

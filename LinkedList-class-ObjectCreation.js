@@ -13,3 +13,14 @@ linkedList.print();
 linkedList.deleteNodeFromBeg();
 linkedList.deleteNodeFromEnd();
 linkedList.print();
+linkedList.addNewNodeAtEnd(6);
+linkedList.print();
+
+const linkedListMap = linkedList.convertToMap();
+console.log("Converted Map:");
+console.log(linkedListMap);
+let node = linkedListMap.get(6);
+while (node != null) {
+  console.log(node.data);
+  node = node.next;
+}
