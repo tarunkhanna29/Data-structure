@@ -1,0 +1,10 @@
+const myMap = new Map();
+const arr1 = [1, 2, 3];
+// myMap.set(arr1, true);
+myMap[arr1] = true;
+myMap[[1, 2, 3]] = true;
+console.log(myMap[arr1]);
+console.log(myMap.get(arr1));
+console.log(myMap.has(arr1));
+console.log(myMap[arr1]);
+console.log(myMap[[1, 2, 3]]);
