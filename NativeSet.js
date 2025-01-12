@@ -50,3 +50,21 @@ const val = mySet1.values().next().value;
 mySet1.delete(val);
 console.log(val);
 console.log(mySet1);
+
+class Node {
+  constructor(data) {
+    this.data = data;
+  }
+}
+
+const mySet2 = new Set();
+mySet2.add(new Node(5));
+mySet2.add(new Node(2));
+mySet2.add(new Node(3));
+mySet2.add(new Node(6));
+mySet2.add(new Node(1));
+console.log(mySet2);
+const node = mySet2.values().next().value;
+console.log(node.data);
+mySet2.delete(node);
+console.log(mySet2);
