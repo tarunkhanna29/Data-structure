@@ -38,3 +38,15 @@ arr10.forEach((item) => set1.add(item));
 arr11.forEach((item) => set1.add(item));
 console.log(set1);
 console.log(set1.has(22));
+
+// Delete item from set based on order of insertion
+const mySet1 = new Set();
+mySet1.add(5);
+mySet1.add(2);
+mySet1.add(3);
+mySet1.add(6);
+mySet1.add(1);
+const val = mySet1.values().next().value;
+mySet1.delete(val);
+console.log(val);
+console.log(mySet1);
