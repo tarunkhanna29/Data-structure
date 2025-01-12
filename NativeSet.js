@@ -8,6 +8,8 @@ console.log(set.has("hello"));
 
 const arr = [1, 2, 3, 4, 5];
 set.add(arr);
+const tmpSet = new Set(arr);
+console.log(tmpSet);
 console.log(set);
 console.log(set.has(arr));
 console.log(set.has([1, 2, 3, 4, 5]));
